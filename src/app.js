@@ -17,14 +17,12 @@ window.onload = function() {
     'during my lunch',
     'while I was praying'
   ];
+    
+  const seleccionAleatoria = (lista) => {
+    return lista[Math.floor(Math.random() * lista.length)];
+  }
 
-  // elegir aleatoriamente un elemento de cada array
-  let randWho = who[Math.floor(Math.random() * who.length)];
-  let randAction = action[Math.floor(Math.random() * action.length)];
-  let randWhat = what[Math.floor(Math.random() * what.length)];
-  let randWhen = when[Math.floor(Math.random() * when.length)];
-
-  let excusa = `${randWho} ${randAction} ${randWhat} ${randWhen}`;
+  let excusa = `${seleccionAleatoria(who)} ${seleccionAleatoria(action)} ${seleccionAleatoria(what)} ${seleccionAleatoria(when)}`;
   
   document.getElementById("excuse").innerHTML = excusa;
 };
